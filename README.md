@@ -230,27 +230,6 @@ python3 -m vault_scene_tagger.validate "/path/to/library"
 
 A JSON Schema is at [`examples/scenes.schema.json`](examples/scenes.schema.json).
 
-## Training-data export
-
-When it's time to train, package the hand-labelled sidecars for the GPU machine:
-
-```bash
-python3 -m vault_scene_tagger.export "/path/to/library" --out ~/training-data
-```
-
-The package is self-contained apart from the videos: `dataset.json` (every video with its markers,
-the AI originals under `was`, and the `rejected` false positives), `labels.txt`, verbatim
-`sidecars/` copies, a `README.md`, and `make_clips.py` — a stdlib+ffmpeg script that cuts the actual
-training clips on the target machine:
-
-```bash
-python3 make_clips.py --media-root /path/to/library --window 20 --dry-run
-```
-
-Each manual marker becomes a clip from the marker to +20 s (cut short by the next marker), plus
-`background` clips from the unmarked gaps, written as `clips/<label>/...` with a `clips.csv` index.
-Only videos with human labels are exported; a video with no `ml` markers left counts as fully
-reviewed, and only those are safe to mine for background clips.
 
 ## Tests
 
