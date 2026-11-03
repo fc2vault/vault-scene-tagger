@@ -1,0 +1,19 @@
+{
+  "schema": "vault-scenes/1",
+  "video": "FC2-PPV-1234567.mp4",
+  "duration": 3187.4,
+  "generator": "vault-scene-tagger 0.1.0",
+  "generated_at": "2026-09-14T10:00:00Z",
+  "tagger": {
+    "phases": ["a"],
+    "params": { "a": { "scene_threshold": 0.3, "min_gap": 1.0 } }
+  },
+  "markers": [
+    { "t": 12.0, "label": "scene", "source": "cut" },
+    { "t": 73.5, "end": 210.0, "label": "blowjob", "confidence": 0.82, "source": "ml" },
+    { "t": 95.2, "label": "scene", "source": "cut" },
+    { "t": 130.0, "label": "intro-end", "source": "manual" },
+    { "t": 210.0, "end": 540.0, "label": "doggy", "confidence": 0.71, "source": "ml" },
+    { "t": 545.0, "end": 560.0, "label": "cumshot", "confidence": 0.9, "source": "ml" }
+  ]
+}
