@@ -16,7 +16,7 @@ and writes data files next to them.
 
 ---
 
-## Install (Vault Pro users: three commands)
+## Install (three commands)
 
 ```bash
 pip install "git+https://github.com/fc2vault/vault-scene-tagger"
@@ -24,8 +24,9 @@ pip install torch transformers numpy      # the model engine; see pytorch.org fo
 brew install ffmpeg                       # macOS; apt/dnf/winget on Linux/Windows
 ```
 
-Then download the scene model once in Vault (**Settings → License → Scene model**). The tagger
-finds it on its own, and tagging a folder is:
+Then download the scene model once in Vault (**Settings → Scene model**; it is a free release of
+[fc2vault/models](https://github.com/fc2vault/models)). The tagger finds it on its own, and tagging
+a folder is:
 
 ```bash
 vault-scene-tagger "/path/to/library/<Actress>" --engine phar
@@ -157,10 +158,11 @@ the more confident one, then the usual cap applies.
 
 Without `--phar-model` (alias `--phar-checkpoint`), the newest `vault-r<N>/` that has a
 `config.json` is used — looked for in this project's `models/` **and in the folder the Vault app
-downloads models into** (Settings → License → Scene model: `~/Library/Application Support/Vault/models`
+downloads models into** (Settings → Scene model: `~/Library/Application Support/Vault/models`
 on macOS, `%LOCALAPPDATA%\Vault\models` on Windows, `~/.local/share/vault/models` on Linux) — else
-`models/timeSformer.pth`. `$VAULT_PHAR_MODEL` overrides both. So a Vault Pro user downloads the model
-in Vault once and runs the tagger with no model flag at all. The engine needs `torch`,
+`models/timeSformer.pth`. `$VAULT_PHAR_MODEL` overrides both. So you download the model in Vault
+once (or unzip a release of [fc2vault/models](https://github.com/fc2vault/models) into `models/`)
+and run the tagger with no model flag at all. The engine needs `torch`,
 `transformers` and `numpy`, which the stdlib-only tool does not require otherwise:
 
 ```bash
