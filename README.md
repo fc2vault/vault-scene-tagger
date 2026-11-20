@@ -1,5 +1,10 @@
 # vault-scene-tagger
 
+> **Retired (2026-11-20): the scene tagger is now part of [Vault](https://github.com/fc2vault/vault).**
+> From Vault 1.10, Settings → Scene model → **Set up** and **Place markers** do what this tool did,
+> with no command line, in the Mac and Windows installers too. This repository stays online,
+> read-only, for reference.
+
 A local batch tool that walks a video library and writes a **scene-marker sidecar** next to every
 video: `<name>.scenes.json`. A reader such as the Vault media server turns those into markers on
 the player's timeline.
